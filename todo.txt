@@ -1,0 +1,53 @@
+download and extract in wwww folder ci_example
+open the page: http://localhost/_ci_monday
+mo mySQL console, paste toàn bo code trong userguide-sql.txt vào
+enter, mo link http://localhost/ci_monday/index.php/customer/show_customers de check lenh
+------------------------------------------------------------------------------------------
+Tao Menu
+application - views-tao folder menu - tao content, footer, header.php
+header.phå de thay the cho http://localhost/ci_monday/index.php/customer/show_customers trong tag <a>
+dung lenh site_url dong thoi vao config-autoload, helper, them url trong array array('url);
+Vao controllers-cusomer.php, them dong lenh de dinh dang $data['page']
+Chay http://localhost/ci_monday/index.php/customer/show_customers de check lenh site_url da dung duoc chua
+Tao main.php trong controller extend CI_Controller
+Tao function index, tao folder main trong views, index.php
+gán main/index cho $data trong function index
+Trong index.php, echo date cua main.php
+Start page from default page, vao config, routes.php, defalut controller = main
+tao table cho array
+vao customer-show_customers.php
+<table> va nhap lenh php dung foreach de doc toan bo data trong array va xuat ra ngoai html
+vao http://[::1]/ci_monday/index.php/customer/show_customers table de check
+-----------------------------------------------------------------------------------------------------
+add_customer la method trong controller customer
+public function add_customers()
+tao duong dan customer/add_customers cho $data['page]
+sau do tao file add_customers.php trong views-customers
+check neu hien thi duoc link http://[::1]/ci_monday/index.php/customer/add_customers
+Tao form de nhap firstname lastname va button
+Long table vao tag <form> voi action la truyen link customer/add_customers va method POST s
+au do required trong input se duoc kich hoat
+Add_customer, de doc data, them lenh post cho button
+Tao array chua new customer
+$this->Customer_model->addCustomer($insert_data); // add and call function then send data
+Vao customer_model trong models tao function addCustomer
+chay trong database consol SELCT * FROM Customers; check data
+Tuong tu, tao delete_customer function
+Updata data function
+------------------------------------------------------------------------------------------------------------
+Tao folder css, myStyle.css, dan link vao header.php trong views-menu
+check: http://localhost/ci_monday/index.php/customer/show_customers
+------------------------------------------------------------------------------------------------------------
+>>>>>>>>>>>>>>>>>> OPTIONAL <<<<<<<<<<<<<<<<<<<<<<<<
+lay file tu server truong, se error
+fix:
+back up database: server cmmand console, serverZ>mysqldump -u root ci_test -p >ci_db.sql
+
+upload to server school: myspl -u peal99 -D peal99 -h mysli.oamk.fi -p > ci_db.sql (peal99 thay bang ten may cua minh)
+mysqldump -u root -ci_test -p >
+se hien ra welcome to the mySQL monitor.... danh trong mySQL>show tables; -> TU coi Linux Putty (OPTIONAL)
+
+
+
+
+

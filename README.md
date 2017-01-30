@@ -1,1 +1,1 @@
-ci_monday
+ci_example
