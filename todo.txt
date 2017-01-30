@@ -1,6 +1,6 @@
 download and extract in wwww folder ci_example
 open the page: http://localhost/_ci_monday
-mo mySQL console, paste toàn bo code trong userguide-sql.txt vào
+tao database, mo mySQL console, paste toàn bo code trong userguide-sql.txt vào
 enter, mo link http://localhost/ci_monday/index.php/customer/show_customers de check lenh
 ------------------------------------------------------------------------------------------
 Tao Menu
@@ -41,13 +41,28 @@ check: http://localhost/ci_monday/index.php/customer/show_customers
 >>>>>>>>>>>>>>>>>> OPTIONAL <<<<<<<<<<<<<<<<<<<<<<<<
 lay file tu server truong, se error
 fix:
-back up database: server cmmand console, serverZ>mysqldump -u root ci_test -p >ci_db.sql
+back up database: server cmmand console, serverZ>mysqldump -u root ci_test -p >ci_db.sql lenh xuat file ci_db.swl ra ngoai folder
 
 upload to server school: myspl -u peal99 -D peal99 -h mysli.oamk.fi -p > ci_db.sql (peal99 thay bang ten may cua minh)
-mysqldump -u root -ci_test -p >
+mysqldump -u root -ci_test -p 
+show tables;
 se hien ra welcome to the mySQL monitor.... danh trong mySQL>show tables; -> TU coi Linux Putty (OPTIONAL)
+chuyen file ci_db.sql qua 
+application-config-database.php
+'hostname' => 'mysli.oamk.fi',
+	'username' => 't4ngng00',
+	'password' => 'hzTZChXhhLffc9KD',
+	'database' => 'opisk_t4ngng00',
+	'dbdriver' => 'mysqli',
 
+Password: hzTZChXhhLffc9KD
 
+application-models-customer_model sua thanh customers thay vi Customers
 
+putty: cmd: check hinh ngoai ci_monday - public_html (ci_moday, dáy, dày, ci_db.sql
+ mysql -h mysli.oamk.fi -u t4ngng00 -D opisk_t4ngng00 -p
+show tables;
+
+check link: http://193.167.100.74/~t4ngng00/ci_monday/index.php/main
 
 
